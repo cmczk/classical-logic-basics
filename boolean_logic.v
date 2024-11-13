@@ -116,3 +116,17 @@ Compute equivalence true true. (* = true *)
 Compute equivalence true false. (* = false *)
 Compute equivalence false true. (* = false *)
 Compute equivalence false false. (* = true *)
+
+
+(* Double negation *)
+Theorem double_negation : forall A : bool, not (not A) = A.
+Proof.
+  intros A.
+  destruct A.
+  -
+    simpl.
+    reflexivity.
+  -
+    simpl.
+    reflexivity.
+Qed.
