@@ -58,6 +58,26 @@ Compute or false true. (* = true *)
 Compute or false false. (* = false *)
 
 
+(* Strong or *)
+(*
+  t t | f
+  t f | t
+  f t | t
+  f f | f
+*)
+Definition xor a b :=
+  match a with
+  | true => not b
+  | false => b
+  end.
+
+Check xor.
+Compute xor true true. (* = false *)
+Compute xor true false. (* = true *)
+Compute xor false true. (* = true *)
+Compute xor false false. (* = false *)
+
+
 (* Logical implication *)
 (*
   t t | t
