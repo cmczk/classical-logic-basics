@@ -186,3 +186,21 @@ Proof.
     simpl.
     reflexivity.
 Qed.
+
+
+(* Sufficient reason *)
+Theorem sufficient_reason : forall A B, implication (and (implication A B) A) B = true.
+Proof.
+  intros A B.
+  destruct A.
+  -
+    simpl.
+    destruct B.
+    simpl.
+    reflexivity.
+    simpl.
+    reflexivity.
+  -
+    simpl.
+    reflexivity.
+Qed.
