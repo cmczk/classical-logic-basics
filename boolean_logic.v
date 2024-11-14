@@ -118,6 +118,20 @@ Compute equivalence false true. (* = false *)
 Compute equivalence false false. (* = true *)
 
 
+(* Identity *)
+Theorem identity : forall A, implication A A = true.
+Proof.
+  intros A.
+  destruct A.
+  -
+    simpl.
+    reflexivity.
+  -
+    simpl.
+    reflexivity.
+Qed.
+
+
 (* Double negation *)
 Theorem double_negation : forall A : bool, not (not A) = A.
 Proof.
@@ -130,3 +144,4 @@ Proof.
     simpl.
     reflexivity.
 Qed.
+
