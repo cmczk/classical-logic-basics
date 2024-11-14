@@ -145,3 +145,15 @@ Proof.
     reflexivity.
 Qed.
 
+(* Contradiction *)
+Theorem contradiction : forall A, not (and A (not A)) = true.
+Proof.
+  intros A.
+  destruct A.
+  -
+    simpl.
+    reflexivity.
+  -
+    simpl.
+    reflexivity.
+Qed.
