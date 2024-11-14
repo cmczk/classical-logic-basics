@@ -172,3 +172,17 @@ Proof.
     simpl.
     reflexivity.
 Qed.
+
+
+(* Consequentia mirabilis / Clavius's law *)
+Theorem consequentia_mirabilis : forall A, implication (implication (not A) A) A = true.
+Proof.
+  intros A.
+  destruct A.
+  -
+    simpl.
+    reflexivity.
+  -
+    simpl.
+    reflexivity.
+Qed.
